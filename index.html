@@ -63,17 +63,63 @@
 
         </div>
     </section>
-
-    <!--
-
     <section id="About">
         <div class="content">
-            <h1>Über uns</h1>
-            <p> Sri Lanka Reisen zur Natur ist ein Reiseunternehmen, das sich auf die Organisation von Reisen in die
-                Natur Sri Lankas spezialisiert hat. Wir bieten maßgeschneiderte Reisepakete, die auf die Bedürfnisse
-                unserer Kunden zugeschnitten sind. Unsere Reisen sind so konzipiert, dass sie die nat
+            <div class="about-title">
+                <h1>SRI LANKA REISEN ZUR NATUR - IHRE SRI LANKA REISEAGENTUR</h1>
+                <h3>Entdecken Sie das authentische Sri Lanka - persönlich, direkt und echt!</h3>
+            </div>
+            <div class="about-card">
+                <img src="photos/profile.jpeg" alt="Welcome Image" class="about-image">
+                <div>
+                    <h2 id="ayubowan"> <span>AYUBOWAN!</span> - WILLKOMMEN!</h2>
+                    <p>
+                        Ich bin Vernon Fernando, Ihr persönlicher Reiseberater und Inhaber von Sri Lanka Reisen zur Natur. 
+                        Ich bin in Sri Lanka geboren und aufgewachsen und kenne die Insel wie meine Westentasche. Mit meiner 
+                        langjährigen Erfahrung in der Reisebranche und meiner Leidenschaft für die Natur möchte ich Ihnen 
+                        die authentische Schönheit Sri Lankas näherbringen. Ich freue mich darauf, Ihre individuelle Traumreise 
+                        zu planen und Sie auf eine unvergessliche Reise durch das Juwel des Indischen Ozeans zu begleiten.
+                    </p>
+                </div>
+            </div>
+            <div class="about-card">
+                <div>
+                    <h2>MEIN WEG ZUR LEIDENSCHAFT</h2>
+                    <p>
+                        Schon als Kind war ich fasziniert von der Natur und Tierwelt Sri Lankas. Ich verbrachte meine Freizeit 
+                        damit, die unberührten Regenwälder und Nationalparks zu erkunden und die vielfältige Tierwelt zu 
+                        beobachten. Mit der Zeit entwickelte sich meine Leidenschaft für die Natur zu einer Berufung. Ich 
+                        entschied mich, mein Wissen und meine Erfahrung mit anderen Naturliebhabern zu teilen und gründete 
+                        Sri Lanka Reisen zur Natur. Heute bin ich stolz darauf, Reisenden aus aller Welt die authentische 
+                        Schönheit Sri Lankas näherzubringen und unvergessliche Reiseerlebnisse zu schaffen.
+                    </p>
+                </div>
+                <img src="photos/background2.jpeg" alt="My Passion Image" class="about-image">
+
+            </div>
+            <div class="about-card">
+                <div>
+                    <h2>EINFACH EINE SCHÖNE REISE – MIT SRI LANKA REISEN ZUR NATUR</h2>
+                    <p>
+                        Bei Sri Lanka Reisen zur Natur steht die Natur im Mittelpunkt. Wir bieten Ihnen individuelle 
+                        Reiseangebote, die auf Ihre persönlichen Wünsche und Bedürfnisse zugeschnitten sind. Ob Sie die 
+                        unberührte Natur Sri Lankas erkunden, die faszinierende Tierwelt beobachten oder die atemberaubenden 
+                        Landschaften genießen möchten – wir planen Ihre Traumreise nach Ihren Vorstellungen. Mit uns erleben 
+                        Sie Sri Lanka von seiner schönsten Seite und entdecken die authentische Schönheit der Insel.
+                    </p>
+                </div>
+                <img src="photos/background3.jpeg" alt="Beautiful Travel Image" class="about-image">
+
+            </div>
+            <div class="about-end">
+                <h2>REISEANGEBOT ANFORDERN</h2>
+                <p>Ich freue mich darauf, unseren Urlaub gemeinsam zu planen!</p>
+                <h2>Ihr Vernon Fernando</h2>
+            </div>
+        </div>
     </section>
--->
+    
+    
     <script>
         const menuBtn = document.querySelector('.menu-btn');
         const navigation = document.querySelector('.navigation');
@@ -81,7 +127,7 @@
         const slides = document.querySelectorAll('.photo-slide');
         let currentIndex = 0; // Current slide index
         const intervalTime = 5000; // Time between automatic transitions in milliseconds
-    
+
         function slideNav(manual) {
             if (manual !== undefined) {
                 currentIndex = manual; // Update current index if manual change
@@ -94,7 +140,7 @@
                     slide.style.visibility = 'visible'; // Make it visible
                 }
             });
-    
+
             btns.forEach((btn, index) => {
                 btn.classList.remove('active');
                 if (index === currentIndex) {
@@ -102,18 +148,18 @@
                 }
             });
         }
-    
+
         function autoSlide() {
             currentIndex = (currentIndex + 1) % slides.length; // Increment index or reset
             slideNav(); // Call slideNav with new index
         }
-    
+
         // Initialize the first slide and button as active on page load
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             slideNav(currentIndex);
             setInterval(autoSlide, intervalTime); // Set up the interval for auto sliding
         });
-    
+
         // Add click event listeners to each navigation button
         btns.forEach((btn, i) => {
             btn.addEventListener('click', () => {
@@ -121,12 +167,12 @@
                 currentIndex = i; // Update current index on manual click
             });
         });
-    
+
         menuBtn.addEventListener('click', () => {
             navigation.classList.toggle('active');
         });
     </script>
-    
+
 
 
 

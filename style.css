@@ -16,8 +16,10 @@ header {
     align-items: center;
     padding: 15px 200px;
     transition: 0.5s ease;
-
+    background-color: rgba(26, 77, 46, 0.6);
+    /* Adjust the alpha value from 0.0 to 1.0 */
 }
+
 
 header .brand {
     color: #E8DFCA;
@@ -74,14 +76,14 @@ section {
     background: #1A4D2E;
 }
 
-.home::before{
+.home::before {
     z-index: 777;
     content: '';
     position: absolute;
     background: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
-    top:0;
+    top: 0;
     left: 0;
 }
 
@@ -153,7 +155,7 @@ section {
     transform: scale(1.4);
 }
 
-.home img{
+.home img {
     z-index: 000;
     position: absolute;
     top: 0;
@@ -164,16 +166,16 @@ section {
 }
 
 .menu-btn {
-    display: none;  
-    font-size: 20px;  
+    display: none;
+    font-size: 20px;
     cursor: pointer;
-    right: 10px;  
-    top: 10px;  
-    position: fixed;  
-    z-index: 1050;  
+    right: 10px;
+    top: 10px;
+    position: fixed;
+    z-index: 1050;
 }
 
-.slider-navigation{
+.slider-navigation {
     z-index: 888;
     position: relative;
     display: flex;
@@ -183,7 +185,7 @@ section {
     margin-bottom: 12px;
 }
 
-.slider-navigation .nav-btn{
+.slider-navigation .nav-btn {
     width: 12px;
     height: 12px;
     background: #E8DFCA;
@@ -194,33 +196,181 @@ section {
     z-index: 1000;
 }
 
-.slider-navigation .nav-btn.active{
+.slider-navigation .nav-btn.active {
     background: #4F6F52;
 }
 
-.slider-navigation .nav-btn{
+.slider-navigation .nav-btn {
     margin: 20px;
 }
 
-.slider-navigation .nav-btn:hover{
+.slider-navigation .nav-btn:hover {
     transform: scale(1.2);
 }
 
 .photo-slide {
     position: absolute;
     width: 100%;
-    height: 100%; /* Ensure full coverage */
+    height: 100%;
+    /* Ensure full coverage */
     top: 0;
     left: 0;
-    visibility: hidden; /* Start with hidden visibility */
-    pointer-events: none; 
-    transition: 3.5s ease;/* Ignore mouse events when video is not active */
+    visibility: hidden;
+    /* Start with hidden visibility */
+    pointer-events: none;
+    transition: 3.5s ease;
+    /* Ignore mouse events when video is not active */
+}
+
+.photo-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Maintain aspect ratio */
+    transition: opacity 0.75s ease;
+    /* Transition only the opacity */
 }
 
 .photo-slide.active {
-    visibility: visible; /* Make visible when active */
-    transition: opacity 0.75s ease; /* Transition only the opacity */
-    pointer-events: auto; /* Enable mouse events when video is active */
+    visibility: visible;
+    /* Make visible when active */
+    transition: opacity 0.75s ease;
+    /* Transition only the opacity */
+    pointer-events: auto;
+    /* Enable mouse events when video is active */
+}
+
+
+
+/* About Section with Card Style */
+
+#About {
+    background-image: url('/Sr-Lanka-Reisen-zur-Natur/photos/background9.jpeg');
+    color: #E8DFCA;
+    /* Cream color for contrast */
+    font-family: 'Poppins', sans-serif;
+    padding: 60px 5%;
+    /* Responsive padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center-align the content */
+    position: relative;
+    /* Required for absolute positioning of pseudo-element */
+    overflow: hidden;
+    /* Ensures the pseudo-element does not exceed the container */
+}
+
+#About::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent black */
+    z-index: 0;
+    /* Ensures the overlay is behind the content */
+}
+
+#About>* {
+    position: relative;
+    /* Ensures content is above the pseudo-element */
+    z-index: 1;
+}
+
+
+#About .content {
+    width: 100%;
+    /* Full width within padding */
+    max-width: 1200px;
+    /* Maximum width of the content */
+    margin-top: 30px;
+    /* Space from header */
+}
+
+#About .about-title h1 {
+    font-size: 2.5em;
+    /* Large font size for title */
+    text-align: center;
+    /* Center-align the title */
+    margin-bottom: 20px;
+    /* Space below the title */
+}
+
+#About .about-title h3 {
+    font-size: 1.4em;
+    /* Slightly smaller font size for subtitles */
+    text-align: center;
+    /* Center-align the subtitle */
+    margin-bottom: 40px;
+    /* Space below the subtitle */
+}
+
+#About .about-card {
+    background: #0D4233;
+    /* Darker green background for each card */
+    border-radius: 10px;
+    /* Rounded corners for cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow for depth */
+    padding: 20px;
+    /* Padding inside cards */
+    margin-bottom: 20px;
+    /* Space between cards */
+    display: flex;
+    flex-direction: row;
+    /* Horizontal layout for larger screens */
+    align-items: center;
+    /* Center items vertically */
+    justify-content: space-between;
+    /* Space between image and text */
+    flex-wrap: wrap;
+    /* Allows wrapping on smaller screens */
+}
+
+#About .about-card img {
+    width: 40%;
+    /* Image takes up 40% of the card */
+    max-width: auto;
+    /* Maximum width of images */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 8px;
+    /* Rounded corners for images */
+    margin: 10px;
+    /* Margin around images */
+}
+
+#About .about-card div {
+    width: 55%;
+    /* Text section takes slightly more space */
+    padding: 10px;
+    /* Padding inside the text container */
+}
+
+#About .about-card h2 {
+    font-size: 1.8em;
+    color: #F5EFE6;
+    padding-bottom: 20px;
+}
+
+#About .about-card p {
+    font-size: 1em;
+    line-height: 1.6;
+    text-align: justify;
+    /* Justified text for cleaner presentation */
+}
+
+#About .about-end {
+    background: #0D4233;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
 }
 
 
@@ -230,13 +380,17 @@ section {
 @media only screen and (max-width: 1040px) {
     header {
         padding: 15px 50px;
+        position: fixed;
         /* Reduced padding for smaller screens */
+        background-color: #1A4D2E;
     }
 
-    header .brand{
+    header .brand {
         font-size: 1.1em;
         /* Reduce font size for brand */
     }
+
+
 
     section {
         padding: 100px 50px;
@@ -246,10 +400,9 @@ section {
     .slider-navigation .nav-btn {
         margin: 10px;
         width: 5px;
-       
+
     }
 
-    
     .home .content {
         width: 90%;
         /* Increase width for smaller screens to use more space */
@@ -291,50 +444,128 @@ section {
     header .navigation {
         position: fixed;
         top: 0;
-        right: -200px; /* Offscreen initially */
+        right: -200px;
+        /* Offscreen initially */
         width: 200px;
-        height: 100vh; /* Full viewport height */
-        background-color: #4F6F52; /* Themed background color */
-        box-shadow: -2px 0 10px rgba(0,0,0,0.5); /* Adds shadow for depth */
-        transition: right 0.3s ease-in-out; /* Smooth and responsive transition */
-        z-index: 1000; /* Ensures the navigation is above other elements */
-        padding-top: 60px; /* Space for top content, aligns with the menu button visually */
+        height: 100vh;
+        /* Full viewport height */
+        background-color: #4F6F52;
+        /* Themed background color */
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+        /* Adds shadow for depth */
+        transition: right 0.3s ease-in-out;
+        /* Smooth and responsive transition */
+        z-index: 1000;
+        /* Ensures the navigation is above other elements */
+        padding-top: 60px;
+        /* Space for top content, aligns with the menu button visually */
     }
-    
+
     header .navigation.active {
-        right: 0; /* Slides in to view when active */
+        right: 0;
+        /* Slides in to view when active */
     }
-    
+
     header .navigation .navigation-items a {
         display: block;
         color: #E8DFCA;
         text-decoration: none;
-        padding: 15px 20px; /* Generous padding for easier interaction */
+        padding: 15px 20px;
+        /* Generous padding for easier interaction */
         text-align: center;
-        font-size: 1em; /* Maintain default size for clarity */
-        transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effects */
-        border-bottom: 1px solid rgba(255,255,255,0.1); /* Subtle separator for each item */
+        font-size: 1em;
+        /* Maintain default size for clarity */
+        transition: background-color 0.3s ease-in-out;
+        /* Smooth transition for hover effects */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        /* Subtle separator for each item */
     }
-    
+
     header .navigation .navigation-items a:hover {
-        background-color: rgba(255, 255, 255, 0.2); /* Light hover effect for visual feedback */
+        background-color: rgba(255, 255, 255, 0.2);
+        /* Light hover effect for visual feedback */
     }
-    
+
     .menu-btn {
+        position: fixed;
         display: inline-block;
         font-size: 30px;
         color: #E8DFCA;
         cursor: pointer;
         position: absolute;
         right: 20px;
-        z-index: 1001; /* Ensures the button is clickable and above the navigation layer */
-        transition: color 0.3s ease; /* Smooth transition for hover color change */
+        z-index: 1001;
+        /* Ensures the button is clickable and above the navigation layer */
+        transition: color 0.3s ease;
+        /* Smooth transition for hover color change */
     }
-    
+
     .menu-btn:hover {
-        color: #C5D6B1; /* Lighter color on hover for better interaction feedback */
+        color: #C5D6B1;
+        /* Lighter color on hover for better interaction feedback */
     }
+
+    /* About Section */
+    #About {
+        padding: 50px 20px;
+        /* Less padding on smaller screens */
+    }
+
+    #About .content {
+        padding: 15px;
+        /* Adjust padding in smaller screens */
+    }
+
+    #About .about-title h1,
+    #About .about-descriptions h2,
+    #About .about-end h2 {
+        font-size: 1.5em;
+        /* Smaller font size on smaller screens */
+    }
+
+    #About .about-card h2 {
+        font-size: 1.0em;
+        text-align: center;
+    }
+
+    #About .about-card p {
+        font-size: 0.8em;
+    }
+
+    #About .about-title {
+        margin-bottom: 20px;
+        /* Less margin on smaller screens */
+    }
+
+    #About .about-title h3 {
+        font-size: 1.2em;
+        /* Less margin on smaller screens */
+    }
+
+    #About .about-card {
+        flex-direction: column;
+        /* Stack elements vertically on small screens */
+        align-items: center;
+        /* Center alignment */
+    }
+
+    #About .about-card img {
+        width: 80%;
+        /* Larger images on small screens */
+    }
+
+    #About .about-card div {
+        width: 100%;
+        /* Text takes full width on small screens */
+    }
+
+    #About .about-end {
+        width: 100%;
+    }
+
+
     
+
 
 
 
