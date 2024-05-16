@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d572a92f12.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <title>Sri Lanka Reisen zur Natur</title>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="brand"> Sri Lanka Reisen zur Natur </a>
+        <div class="menu-btn"><i class="fa-solid fa-bars"></i></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">Home </a>
+                <a href="#">About </a>
+                <a href="#">Our Service </a>
+                <a href="#">Gallery </a>
+                <a href="#">Contact </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <img src="photos/background1.jpeg" alt="background1" class="photo-slide">
+        <img src="photos/background2.jpeg" alt="background2" class="photo-slide">
+        <img src="photos/background3.jpeg" alt="background3" class="photo-slide">
+        <img src="photos/background4.jpeg" alt="background4" class="photo-slide">
+        <img src="photos/background5.jpeg" alt="background5" class="photo-slide">
+        <img src="photos/background6.jpeg" alt="background6" class="photo-slide">
+        <img src="photos/background7.jpeg" alt="background7" class="photo-slide">
+
+
+        <div class="content">
+            <h1>Wundervolle. <br> <span>Insel</span></h1>
+            <p> Sri Lanka, das Juwel des Indischen Ozeans, ist ein Paradies, das Besucher mit seiner atemberaubenden
+                Naturschönheit verzaubert. Dieser Inselstaat ist eine Schatzkammer üppiger Regenwälder, goldener Strände
+                und nebliger Berge. Jede Ecke Sri Lankas bietet einen Einblick in eine harmonische Mischung aus Natur
+                und Tierwelt.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="media-icons">
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-whatsapp"></i></a>
+
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const navigation = document.querySelector('.navigation');
+        const btns = document.querySelectorAll('.nav-btn');
+        const slides = document.querySelectorAll('.photo-slide');
+
+        function slideNav(manual) {
+            slides.forEach((slide, index) => {
+                slide.style.opacity = '0'; // Hide all images
+                slide.style.visibility = 'hidden'; // Make them not visible
+                if (index === manual) {
+                    slide.style.opacity = '1'; // Show the selected image
+                    slide.style.visibility = 'visible'; // Make it visible
+                }
+            });
+
+            btns.forEach(btn => {
+                btn.classList.remove('active');
+                if (btns[manual] === btn) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            slideNav(0); // Initialize the slider
+        });
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                slideNav(i);
+            });
+        });
+
+        menuBtn.addEventListener('click', () => {
+            navigation.classList.toggle('active');
+        });
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

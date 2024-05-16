@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    transition: 0.5s ease;
+
+}
+
+header .brand {
+    color: #E8DFCA;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header .navigation {
+    position: relative;
+
+}
+
+header .navigation .navigation-items a {
+    color: #E8DFCA;
+    text-decoration: none;
+    font-size: 1em;
+    margin-left: 30px;
+    transition: 0.5s ease;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s ease;
+
+}
+
+header .navigation .navigation-items a::before {
+    content: '';
+    position: absolute;
+    background: #ff004f;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+}
+
+header .navigation .navigation-items a:hover::before {
+    width: 100%;
+    transition: 0.5s ease;
+}
+
+section {
+    padding: 100px 200px;
+    ;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #1A4D2E;
+}
+
+.home::before{
+    z-index: 777;
+    content: '';
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+}
+
+.home .content {
+    z-index: 888;
+    color: #E8DFCA;
+    width: 70%;
+    margin-top: 50px;
+}
+
+.home .content h1 {
+    font-size: 4em;
+    font-weight: 900;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 75px;
+}
+
+.home .content h1 span {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.home .content p {
+    margin-bottom: 65px;
+}
+
+.home .content a {
+    padding: 15px 35px;
+    color: #F5EFE6;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: 0.5s ease;
+    border: 4px solid#4F6F52;
+
+}
+
+.home .content a:hover {
+    background: #ff004f;
+    color: white;
+}
+
+
+.home .media-icons {
+    z-index: 888;
+    position: absolute;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+}
+
+.home .media-icons a {
+    color: #E8DFCA;
+    font-size: 1.6em;
+    background: none;
+    transition: 0.5s ease;
+}
+
+.home .media-icons a:not(:last-child) {
+    margin-bottom: 20px;
+
+}
+
+.home .media-icons a:hover {
+    transform: scale(1.4);
+}
+
+.home img{
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu-btn {
+    display: none;  
+    font-size: 20px;  
+    cursor: pointer;
+    right: 10px;  
+    top: 10px;  
+    position: fixed;  
+    z-index: 1050;  
+}
+
+.slider-navigation{
+    z-index: 888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(80px);
+    margin-bottom: 12px;
+}
+
+.slider-navigation .nav-btn{
+    width: 12px;
+    height: 12px;
+    background: #E8DFCA;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: #4F6F52;
+    transition: 0.3s ease;
+}
+
+.slider-navigation .nav-btn.active{
+    background: #4F6F52;
+}
+
+.slider-navigation .nav-btn{
+    margin: 20px;
+}
+
+.slider-navigation .nav-btn:hover{
+    transform: scale(1.2);
+}
+
+.photo-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%; /* Ensure full coverage */
+    top: 0;
+    left: 0;
+    visibility: hidden; /* Start with hidden visibility */
+    pointer-events: none; 
+    transition: 0.5s ease;/* Ignore mouse events when video is not active */
+}
+
+.photo-slide.active {
+    visibility: visible; /* Make visible when active */
+    transition: opacity 0.75s ease; /* Transition only the opacity */
+    pointer-events: auto; /* Enable mouse events when video is active */
+}
+
+
+
+
+
+@media only screen and (max-width: 1040px) {
+    header {
+        padding: 15px 50px;
+        /* Reduced padding for smaller screens */
+    }
+
+    header .brand{
+        font-size: 1.1em;
+        /* Reduce font size for brand */
+    }
+
+    section {
+        padding: 100px 50px;
+        /* Adjust section padding to be smaller */
+    }
+
+    .home .content {
+        width: 90%;
+        /* Increase width for smaller screens to use more space */
+        margin-top: 20px;
+        /* Reduce margin top */
+    }
+
+    .home .content h1 {
+        font-size: 1.9em;
+        /* Reduce font size for main heading */
+        line-height: 60px;
+        /* Adjust line height to fit new font size */
+    }
+
+    .home .content h1 span {
+        font-size: 1em;
+        /* Adjust span font size within h1 */
+    }
+
+    .home .content p {
+        font-size: 0.9em;
+        /* Smaller paragraph font size */
+        margin-bottom: 40px;
+        /* Adjust bottom margin of paragraph */
+    }
+
+    .home .content a {
+        padding: 10px 30px;
+        /* Adjust button padding */
+        font-size: 1em;
+        /* Adjust button font size */
+    }
+
+    .home .media-icons {
+        right: 10px;
+        /* Adjust the position of the media icons */
+    }
+
+    header .navigation {
+        position: fixed;
+        top: 0;
+        right: -200px; /* Offscreen initially */
+        width: 200px;
+        height: 100vh; /* Full viewport height */
+        background-color: #4F6F52; /* Themed background color */
+        box-shadow: -2px 0 10px rgba(0,0,0,0.5); /* Adds shadow for depth */
+        transition: right 0.3s ease-in-out; /* Smooth and responsive transition */
+        z-index: 1000; /* Ensures the navigation is above other elements */
+        padding-top: 60px; /* Space for top content, aligns with the menu button visually */
+    }
+    
+    header .navigation.active {
+        right: 0; /* Slides in to view when active */
+    }
+    
+    header .navigation .navigation-items a {
+        display: block;
+        color: #E8DFCA;
+        text-decoration: none;
+        padding: 15px 20px; /* Generous padding for easier interaction */
+        text-align: center;
+        font-size: 1em; /* Maintain default size for clarity */
+        transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effects */
+        border-bottom: 1px solid rgba(255,255,255,0.1); /* Subtle separator for each item */
+    }
+    
+    header .navigation .navigation-items a:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Light hover effect for visual feedback */
+    }
+    
+    .menu-btn {
+        display: inline-block;
+        font-size: 30px;
+        color: #E8DFCA;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        z-index: 1001; /* Ensures the button is clickable and above the navigation layer */
+        transition: color 0.3s ease; /* Smooth transition for hover color change */
+    }
+    
+    .menu-btn:hover {
+        color: #C5D6B1; /* Lighter color on hover for better interaction feedback */
+    }
+    
+
+
+
+
+
+
+}
