@@ -191,6 +191,7 @@ section {
     cursor: pointer;
     box-shadow: #4F6F52;
     transition: 0.3s ease;
+    z-index: 1000;
 }
 
 .slider-navigation .nav-btn.active{
@@ -240,6 +241,14 @@ section {
     section {
         padding: 100px 50px;
         /* Adjust section padding to be smaller */
+    }
+
+    
+    .slider-navigation .nav-btn {
+        margin: 10px;
+        /* Adjust margin for smaller screens */
+        width: 5px;
+       
     }
 
     .home .content {
