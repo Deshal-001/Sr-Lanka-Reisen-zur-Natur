@@ -213,7 +213,7 @@ section {
     left: 0;
     visibility: hidden; /* Start with hidden visibility */
     pointer-events: none; 
-    transition: 0.5s ease;/* Ignore mouse events when video is not active */
+    transition: 1.5s ease;/* Ignore mouse events when video is not active */
 }
 
 .photo-slide.active {

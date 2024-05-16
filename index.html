@@ -66,39 +66,54 @@
         const navigation = document.querySelector('.navigation');
         const btns = document.querySelectorAll('.nav-btn');
         const slides = document.querySelectorAll('.photo-slide');
-
+        let currentIndex = 0; // Current slide index
+        const intervalTime = 5000; // Time between automatic transitions in milliseconds
+    
         function slideNav(manual) {
+            if (manual !== undefined) {
+                currentIndex = manual; // Update current index if manual change
+            }
             slides.forEach((slide, index) => {
                 slide.style.opacity = '0'; // Hide all images
                 slide.style.visibility = 'hidden'; // Make them not visible
-                if (index === manual) {
+                if (index === currentIndex) {
                     slide.style.opacity = '1'; // Show the selected image
                     slide.style.visibility = 'visible'; // Make it visible
                 }
             });
-
-            btns.forEach(btn => {
+    
+            btns.forEach((btn, index) => {
                 btn.classList.remove('active');
-                if (btns[manual] === btn) {
+                if (index === currentIndex) {
                     btn.classList.add('active');
                 }
             });
         }
-
+    
+        function autoSlide() {
+            currentIndex = (currentIndex + 1) % slides.length; // Increment index or reset
+            slideNav(); // Call slideNav with new index
+        }
+    
+        // Initialize the first slide and button as active on page load
         document.addEventListener('DOMContentLoaded', function() {
-            slideNav(0); // Initialize the slider
+            slideNav(currentIndex);
+            setInterval(autoSlide, intervalTime); // Set up the interval for auto sliding
         });
-
+    
+        // Add click event listeners to each navigation button
         btns.forEach((btn, i) => {
             btn.addEventListener('click', () => {
                 slideNav(i);
+                currentIndex = i; // Update current index on manual click
             });
         });
-
+    
         menuBtn.addEventListener('click', () => {
             navigation.classList.toggle('active');
         });
     </script>
+    
 
 
 
