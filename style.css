@@ -309,8 +309,7 @@ section {
 }
 
 #About .about-card {
-    background: #0D4233;
-    /* Darker green background for each card */
+    background: rgba(13, 66, 51, 0.6);     /* Darker green background for each card */
     border-radius: 10px;
     /* Rounded corners for cards */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -364,8 +363,7 @@ section {
 }
 
 #About .about-end {
-    background: #0D4233;
-    padding: 20px;
+    background: rgba(13, 66, 51, 0.5);     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
     text-align: center;
