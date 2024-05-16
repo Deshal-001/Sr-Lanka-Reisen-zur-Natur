@@ -243,14 +243,13 @@ section {
         /* Adjust section padding to be smaller */
     }
 
-    
     .slider-navigation .nav-btn {
         margin: 10px;
-        /* Adjust margin for smaller screens */
         width: 5px;
        
     }
 
+    
     .home .content {
         width: 90%;
         /* Increase width for smaller screens to use more space */
