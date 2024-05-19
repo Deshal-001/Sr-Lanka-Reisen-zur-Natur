@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+#About .about-card p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -63,7 +73,6 @@ header .navigation .navigation-items a:hover::before {
 
 section {
     padding: 100px 200px;
-    ;
 }
 
 .home {
@@ -284,7 +293,7 @@ section {
 #About .content {
     width: 100%;
     /* Full width within padding */
-    max-width: 1200px;
+    max-width: 85%;
     /* Maximum width of the content */
     margin-top: 30px;
     /* Space from header */
@@ -309,7 +318,7 @@ section {
 }
 
 #About .about-card {
-    background: rgba(13, 66, 51, 0.6);     /* Darker green background for each card */
+    background: rgba(13, 66, 51, 0.45);     /* Darker green background for each card */
     border-radius: 10px;
     /* Rounded corners for cards */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -331,37 +340,29 @@ section {
 
 #About .about-card img {
     width: 40%;
-    /* Image takes up 40% of the card */
-    max-width: auto;
-    /* Maximum width of images */
+    max-width: 400px;
     height: auto;
-    /* Maintain aspect ratio */
     border-radius: 8px;
-    /* Rounded corners for images */
     margin: 10px;
-    /* Margin around images */
 }
 
 #About .about-card div {
-    width: 55%;
-    /* Text section takes slightly more space */
+    width: 60%;
     padding: 10px;
-    /* Padding inside the text container */
 }
 
 #About .about-card h2 {
-    font-size: 1.8em;
+    font-size: 2.1em;
     color: #F5EFE6;
     padding-bottom: 20px;
 }
 
 #About .about-card p {
-    font-size: 1em;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1em;
     line-height: 1.6;
     text-align: justify;
-    /* Justified text for cleaner presentation */
 }
-
 #About .about-end {
     background: rgba(13, 66, 51, 0.5);     padding: 20px;
     border-radius: 10px;
@@ -371,46 +372,154 @@ section {
     max-width: 600px;
 }
 
-/* contact section */
-
-#Contact .content {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+/* Contact Section Base Styles */
+#contact {
+    background-image: url('/Sr-Lanka-Reisen-zur-Natur/photos/contact.jpeg');
+    color: #E8DFCA;
+    /* Cream color for contrast */
+    font-family: 'Poppins', sans-serif;
+    padding: 60px 5%;
+    /* Responsive padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center-align the content */
+    position: relative;
+    /* Required for absolute positioning of pseudo-element */
+    overflow: hidden;
 }
 
-#Contact label {
-    margin-top: 10px;
-    display: block;
-    font-weight: bold;
+#contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.86);
+    /* Semi-transparent black */
+    z-index: 0;
+    /* Ensures the overlay is behind the content */
 }
 
-#Contact input[type="text"],
-#Contact input[type="email"],
-#Contact textarea {
+#contact>* {
+    position: relative;
+    /* Ensures content is above the pseudo-element */
+    z-index: 1;
+}
+
+
+#contact .container {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    /* Full width within padding */
+    max-width: 1200px;
+    /* Maximum width of the content */
+    margin-top: 30px;
+    /* Space from header */
 }
 
-#Contact button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
+.section-title {
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 20px 0;
-    cursor: pointer;
-    border-radius: 4px;
+    font-size: 2.5em;
+    color: white;
+    margin-bottom: 20px;
 }
+
+.contact-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    background: rgba(232, 223, 202, 0.75);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+}
+
+.message{
+    height: 200px;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-detail i {
+    font-size: 34px;
+    color: #0D4233;
+}
+
+.contact-detail p {
+    font-size: 20px;
+    color: #0D4233;}
+
+.social-icons a {
+    margin-top: 20px;
+    margin-right: 20px;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    
+}
+
+.social-icons p{
+    margin-left: 10px;
+    color: #0D4233;
+}
+
+.social-icons i {
+    font-size: 34px;
+    color: #1A4D2E;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover i {
+    color: #555;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: none;
+    border: none;
+    color: black;
+    border-radius: 5px;
+    font-weight: 800;
+    cursor: pointer;
+    border: 4px solid#ff004f;
+}
+
+.contact-form button:hover {
+    background: #ff004f;
+    color: white;}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .contact-flex {
+        flex-direction: column;
+    }
+}
+
 
 
 @media only screen and (max-width: 1040px) {
@@ -599,6 +708,40 @@ section {
         width: 100%;
     }
 
+
+    #contact {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .section-title {
+        font-size: 2em; /* Smaller title on smaller screens */
+    }
+
+    .contact-flex {
+        flex-direction: column; /* Stack form and info vertically */
+    }
+
+    .contact-info, .contact-form {
+        padding: 15px; /* Less padding */
+    }
+
+    .contact-detail i {
+        font-size: 24px; /* Significantly smaller icons */
+    }
+
+    .contact-detail p {
+        font-size: 14px; /* Significantly smaller text */
+    }
+
+    .social-icons a {
+        margin-right: 10px; /* Less spacing between icons */
+    }
+
+    .social-icons i {
+        font-size: 24px; /* Smaller social media icons */
+    }
+}
 
     
 
