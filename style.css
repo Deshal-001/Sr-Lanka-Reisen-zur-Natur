@@ -729,7 +729,7 @@ section {
     }
 
     #About .content {
-        padding: 10px;
+        padding: 0px;
         /* Adjust padding in smaller screens */
     }
 
@@ -805,14 +805,17 @@ section {
 
     .contact-detail p {
         font-size: 14px; /* Significantly smaller text */
+        font-size: smaller;
     }
 
     .social-icons a {
         margin-right: 10px; /* Less spacing between icons */
+        font-size: smaller;
+
     }
 
     .social-icons i {
-        font-size: 24px; /* Smaller social media icons */
+        font-size: small;
     }
 
     .gallery {
