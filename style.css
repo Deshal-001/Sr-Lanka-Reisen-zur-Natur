@@ -510,6 +510,78 @@ section {
     color: white;}
 
 
+/* Gallery */
+
+.gallery{
+    background-image: url('/Sr-Lanka-Reisen-zur-Natur/photos/contact.jpeg');
+    color: #E8DFCA;
+    /* Cream color for contrast */
+    font-family: 'Poppins', sans-serif;
+    padding: 60px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: 1s ease;
+
+}
+
+.gallery::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent black */
+    z-index: 0;
+    /* Ensures the overlay is behind the content */
+}
+
+.gallery>* {
+    position: relative;
+    /* Ensures content is above the pseudo-element */
+    z-index: 1;
+}
+
+.gallery .container {
+    width: 80%;
+    margin: auto;
+
+}
+
+.main-image-display img {
+    width: 100%;
+    max-height: 700px;
+    display: block;
+    margin-bottom: 20px;
+
+}
+
+.image-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px 0;
+
+
+}
+
+.image-slider img {
+    width: 120px;
+    height: 80px;
+    cursor: pointer;
+    transition: 0.5s ease;
+    object-fit: cover;
+}
+
+.image-slider img:hover {
+    transform: scale(1.1);
+
+}
+
 
 
 
@@ -652,12 +724,12 @@ section {
 
     /* About Section */
     #About {
-        padding: 50px 20px;
-        /* Less padding on smaller screens */
+        padding: 10px 5px;
+        /* Less paddi1g on smaller screens */
     }
 
     #About .content {
-        padding: 15px;
+        padding: 10px;
         /* Adjust padding in smaller screens */
     }
 
@@ -689,6 +761,7 @@ section {
 
     #About .about-card {
         flex-direction: column;
+        width: 100%;
         /* Stack elements vertically on small screens */
         align-items: center;
         /* Center alignment */
@@ -741,6 +814,23 @@ section {
     .social-icons i {
         font-size: 24px; /* Smaller social media icons */
     }
+
+    .gallery {
+        height: 75vh;
+        padding: 30px 3%;
+    }
+
+    .main-image-display img {
+        max-height: 400px;
+    }
+
+    .image-slider img {
+        width: 90px;
+    }
+
+    .gallery h2.section-title {
+        font-size: 1.5em;
+    }
 }
 
     
@@ -751,4 +841,3 @@ section {
 
 
 
-}
