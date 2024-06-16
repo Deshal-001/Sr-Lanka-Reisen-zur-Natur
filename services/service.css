@@ -1,0 +1,115 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #1A4D2E;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+#About .about-card p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    transition: 0.5s ease;
+    background-color: rgba(26, 77, 46, 0.6);
+    /* Adjust the alpha value from 0.0 to 1.0 */
+}
+
+
+header .brand {
+    color: #E8DFCA;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header .navigation {
+    position: relative;
+
+}
+
+header .navigation .navigation-items a {
+    color: #E8DFCA;
+    text-decoration: none;
+    font-size: 1em;
+    margin-left: 30px;
+    transition: 0.5s ease;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s ease;
+
+}
+
+header .navigation .navigation-items a::before {
+    content: '';
+    position: absolute;
+    background: #ff004f;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+}
+
+header .navigation .navigation-items a:hover::before {
+    width: 100%;
+    transition: 0.5s ease;
+}
+
+/* Service Details Section */
+.service-details {
+    padding: 100px 0 50px;
+    background: #f5f5f5;
+    margin-top: 80px;
+}
+
+.service-details h1 {
+    font-size: 2.5em;
+    color: #1A4D2E;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.service-details h2 {
+    font-size: 2em;
+    color: #1A4D2E;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #1A4D2E;
+    padding-bottom: 10px;
+}
+
+.service-details p, .service-details ul {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px;
+    padding-left: 10px; /* Add a value for padding-left */
+}

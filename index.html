@@ -17,9 +17,9 @@
         <div class="menu-btn"><i class="fa-solid fa-bars"></i></div>
         <div class="navigation">
             <div class="navigation-items">
-                <a href="#">Heim </a>
+                <a href="#">Home </a>
                 <a href="#About">Über uns </a>
-                <a href="#">Unser Service </a>
+                <a href="#Service">Unser Service </a>
                 <a href="#Gallery">Galerie </a>
                 <a href="#contact">Kontakt </a>
             </div>
@@ -169,6 +169,27 @@
             </div>
         </div>
     </section>
+
+    <!-- Our Service -->
+
+    <section id="Service" class="service">
+        <div class="container">
+            <h2 class="section-title">Unser Service</h2>
+            <div class="service-cards">
+                <div class="service-card">
+                    <h3>Service 1</h3>
+                    <p>Tierewelt, Pflanzen, Kultur und Wandern- Reise Sri Lanka.</p>
+                    <a href="/Sr-Lanka-Reisen-zur-Natur/services/service1.html" class="btn">Mehr erfahren</a>
+                </div>
+                <div class="service-card">
+                    <h3>Service 2</h3>
+                    <p>Tierewelt, Pflanzen, Kultur und Wander- Reise Sri Lanka</p>
+                    <a href="/Sr-Lanka-Reisen-zur-Natur/services/service2.html" class="btn">Mehr erfahren</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 
 
     <!-- Gallery -->
@@ -360,11 +381,29 @@ function changeImage(src) {
 
 </script>
 
+<script>
+    document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('mouseover', () => {
+        card.style.transform = 'scale(1.05)';
+        card.style.transition = 'transform 0.3s ease-in-out';
+    });
+
+    card.addEventListener('mouseout', () => {
+        card.style.transform = 'scale(1)';
+    });
+});
+
+</script>
+
 
 
 
 
 
 </body>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Sri Reisen zur Natur. All rights reserved.</p</footer>
 
 </html>
