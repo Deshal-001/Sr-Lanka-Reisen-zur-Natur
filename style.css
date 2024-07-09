@@ -27,7 +27,6 @@ header {
     padding: 15px 200px;
     transition: 0.5s ease;
     background-color: rgba(26, 77, 46, 0.6);
-    /* Adjust the alpha value from 0.0 to 1.0 */
 }
 
 
@@ -254,7 +253,7 @@ section {
 /* About Section with Card Style */
 
 #About {
-    background-image: url('/Sr-Lanka-Reisen-zur-Natur/photos/background9.jpeg');
+    background-image: url('photos/background9.jpeg');
     color: #E8DFCA;
     /* Cream color for contrast */
     font-family: 'Poppins', sans-serif;
@@ -374,7 +373,7 @@ section {
 
 /* Contact Section Base Styles */
 #contact {
-    background-image: url('/Sr-Lanka-Reisen-zur-Natur/photos/contact.jpeg');
+    background-image: url('photos/contact.jpeg');
     color: #E8DFCA;
     /* Cream color for contrast */
     font-family: 'Poppins', sans-serif;
@@ -572,7 +571,7 @@ section {
 /* Gallery */
 
 .gallery{
-    background-image: url('/Sr-Lanka-Reisen-zur-Natur/photos/contact.jpeg');
+    background-image: url('photos/contact.jpeg');
     color: #E8DFCA;
     /* Cream color for contrast */
     font-family: 'Poppins', sans-serif;
