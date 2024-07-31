@@ -186,6 +186,12 @@
                     <p>Tierewelt, Pflanzen, Kultur und Wander- Reise Sri Lanka</p>
                     <a href="services/service2.html" class="btn">Mehr erfahren</a>
                 </div>
+
+                <div class="service-card">
+                    <h3>Service 3</h3>
+                    <p>Tierewelt, Pflanzen, Kultur und Wander- Reise Sri Lanka</p>
+                    <a href="services/service3.html" class="btn">Mehr erfahren</a>
+                </div>
             </div>
         </div>
     </section>
@@ -338,7 +344,8 @@
     </script>
 
 
-    <script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
         const menuBtn = document.querySelector('.menu-btn');
         const navigation = document.querySelector('.navigation');
         const btns = document.querySelectorAll('.nav-btn');
@@ -373,10 +380,8 @@
         }
 
         // Initialize the first slide and button as active on page load
-        document.addEventListener('DOMContentLoaded', function () {
-            slideNav(currentIndex);
-            setInterval(autoSlide, intervalTime); // Set up the interval for auto sliding
-        });
+        slideNav(currentIndex);
+        setInterval(autoSlide, intervalTime); // Set up the interval for auto sliding
 
         // Add click event listeners to each navigation button
         btns.forEach((btn, i) => {
@@ -389,7 +394,16 @@
         menuBtn.addEventListener('click', () => {
             navigation.classList.toggle('active');
         });
-    </script>
+
+        // Close navigation drawer when clicking outside of it
+        document.addEventListener('click', (event) => {
+            if (!navigation.contains(event.target) && !menuBtn.contains(event.target)) {
+                navigation.classList.remove('active');
+            }
+        });
+    });
+</script>
+
 
 
     <script>

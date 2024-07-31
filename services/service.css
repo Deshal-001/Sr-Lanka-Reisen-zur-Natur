@@ -10,13 +10,24 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: #1A4D2E;
-    background-color: #fff; /* Set a background color */
+    background-color: #e0f7e9;
+    /* Set a background color */
 }
 
 .container {
     width: 80%;
     margin: auto;
     overflow: hidden;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 20px;
+    cursor: pointer;
+    right: 10px;
+    top: 10px;
+    position: fixed;
+    z-index: 1050;
 }
 
 /* Fonts import */
@@ -40,9 +51,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px; /* Adjusted padding for responsiveness */
+    padding: 15px 50px;
+    /* Adjusted padding for responsiveness */
     transition: 0.5s ease;
-    background-color: rgba(26, 77, 46, 0.9); /* Adjusted background color with alpha */
+    background-color: rgba(26, 77, 46, 0.9);
+    /* Adjusted background color with alpha */
 }
 
 header .brand {
@@ -78,7 +91,8 @@ header .navigation .navigation-items a::before {
     background: #ff004f;
     width: 0;
     height: 3px;
-    bottom: -5px; /* Adjusted position for underline */
+    bottom: -5px;
+    /* Adjusted position for underline */
     left: 0;
     transition: width 0.3s ease;
 }
@@ -90,7 +104,7 @@ header .navigation .navigation-items a:hover::before {
 /* Service Details Section */
 .service-details {
     padding: 100px 0;
-    background: #f5f5f5;
+    background: #e0f7e9;
     margin-top: 80px;
 }
 
@@ -109,12 +123,14 @@ header .navigation .navigation-items a:hover::before {
     padding-bottom: 10px;
 }
 
-.service-details p, .service-details ul {
+.service-details p,
+.service-details ul {
     font-size: 1.1em;
     line-height: 1.8;
     color: #333;
     margin-bottom: 20px;
-    padding-left: 20px; /* Adjusted padding-left for paragraphs and lists */
+    padding-left: 20px;
+    /* Adjusted padding-left for paragraphs and lists */
 }
 
 /* Footer Styles */
@@ -130,44 +146,123 @@ footer p {
     font-size: 0.9em;
 }
 
-
 div.scroll-container {
-  background-color: #333;
-  overflow: auto;
-  white-space: nowrap;
-  padding: 10px;
-  margin-top: 40px;
-  margin-bottom: 60px;
-  justify-content: space-between;
-
-  
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 10px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    justify-content: space-between;
 }
 
 div.scroll-container img {
     height: auto;
-  max-height: 300px;
-  min-width: 40%;
+    max-height: 300px;
+    min-width: 40%;
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1040px) {
     header {
-        padding: 15px 20px; /* Adjusted padding for smaller screens */
-    }
-
-    .container {
-        width: 90%; /* Adjusted width for smaller screens */
-    }
-
-    .service-details {
-        padding: 80px 0; /* Adjusted padding for smaller screens */
+        padding: 15px 20px;
+        background-color: #1A4D2E;
     }
 
     header .brand {
-        font-size: 1.2em; /* Adjusted font size for smaller screens */
+        font-size: 1.2em;
+    }
+
+    header .navigation {
+        position: fixed;
+        top: 0;
+        right: -200px;
+        /* Offscreen initially */
+        width: 200px;
+        height: 100vh;
+        /* Full viewport height */
+        background-color: #4F6F52;
+        /* Themed background color */
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+        /* Adds shadow for depth */
+        transition: right 0.3s ease-in-out;
+        /* Smooth and responsive transition */
+        z-index: 1000;
+        /* Ensures the navigation is above other elements */
+        padding-top: 60px;
+        /* Space for top content, aligns with the menu button visually */
+    }
+
+    header .navigation.active {
+        right: 0;
+        /* Slides in to view when active */
+    }
+
+    header .navigation .navigation-items {
+        display: block; /* Stack navigation items vertically */
     }
 
     header .navigation .navigation-items a {
-        margin-left: 20px; /* Adjusted margin for smaller screens */
+        display: block;
+        color: #E8DFCA;
+        text-decoration: none;
+        padding: 15px 20px;
+        /* Generous padding for easier interaction */
+        text-align: center;
+        font-size: 1em;
+        /* Maintain default size for clarity */
+        transition: background-color 0.3s ease-in-out;
+        /* Smooth transition for hover effects */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        /* Subtle separator for each item */
+    }
+
+    header .navigation .navigation-items a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        /* Light hover effect for visual feedback */
+    }
+
+    .menu-btn {
+        display: inline-block;
+        font-size: 30px;
+        color: #E8DFCA;
+        cursor: pointer;
+        position: fixed;
+        right: 20px;
+        z-index: 1001;
+        /* Ensures the button is clickable and above the navigation layer */
+        transition: color 0.3s ease;
+        /* Smooth transition for hover color change */
+    }
+
+    .menu-btn:hover {
+        color: #C5D6B1;
+        /* Lighter color on hover for better interaction feedback */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        /* Adjusted width for smaller screens */
+    }
+
+    .service-details {
+        padding: 80px 0;
+        /* Adjusted padding for smaller screens */
+    }
+
+    header .brand {
+        font-size: 1.1em;
+        /* Reduce font size for brand */
+    }
+
+    header .navigation .navigation-items a {
+        margin-left: 0;
+        /* Remove margin for vertical layout */
+    }
+
+    .contact-flex {
+        flex-direction: column;
     }
 }

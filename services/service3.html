@@ -134,13 +134,13 @@
                 </div>
             </div>
         </section>
+
         <script>
+            const menuBtn = document.querySelector('.menu-btn');
+            const navigation = document.querySelector('.navigation');
+            const btns = document.querySelectorAll('.nav-btn');
+    
             document.addEventListener('DOMContentLoaded', function () {
-                const menuBtn = document.querySelector('.menu-btn');
-                const navigation = document.querySelector('.navigation');
-                const btns = document.querySelectorAll('.nav-btn');
-        
-                // Initialize sliders with automatic scrolling
                 const sliders = document.querySelectorAll('.scroll-container');
                 sliders.forEach(slider => {
                     let scrollLeft = 0;
@@ -152,29 +152,19 @@
                         }
                     }, 50000);
                 });
-        
-                // Add click event listeners to each navigation button
-                btns.forEach((btn, i) => {
-                    btn.addEventListener('click', () => {
-                        slideNav(i);
-                        currentIndex = i; // Update current index on manual click
-                    });
-                });
-        
-                // Toggle navigation drawer visibility on menu button click
-                menuBtn.addEventListener('click', () => {
-                    navigation.classList.toggle('active');
-                });
-        
-                // Close navigation drawer when clicking outside of it
-                document.addEventListener('click', (event) => {
-                    if (!navigation.contains(event.target) && !menuBtn.contains(event.target)) {
-                        navigation.classList.remove('active');
-                    }
+            });
+            // Add click event listeners to each navigation button
+            btns.forEach((btn, i) => {
+                btn.addEventListener('click', () => {
+                    slideNav(i);
+                    currentIndex = i; // Update current index on manual click
                 });
             });
+    
+            menuBtn.addEventListener('click', () => {
+                navigation.classList.toggle('active');
+            });
         </script>
-        
     </main>
 
     <footer>

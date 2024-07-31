@@ -508,57 +508,89 @@ section {
     background: #ff004f;
     color: white;}
 
-    /* Services Section */
+/* Service Section */
 .service {
-    padding: 60px 5%;
-    background-color: #E8DFCA;
-    text-align: center;
-    color: #1A4D2E;
-    
+    background-image: url('photos/contact.jpeg'); /* Replace with your image */
+    color: #E8DFCA; /* Cream color for text */
+    font-family: 'Poppins', sans-serif;
+    padding: 60px 5%; /* Responsive padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align the content */
+    position: relative; /* Required for absolute positioning of pseudo-element */
+    overflow: hidden; /* Hide any overflow caused by pseudo-element */
 }
 
-.service .section-title {
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    color: #1A4D2E;
+.service::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.55); /* Semi-transparent black */
+    z-index: 0; /* Ensures the overlay is behind the content */
 }
 
+/* Ensure content within .service is above the overlay */
+.service > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Service Cards Container */
 .service-cards {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 60px;
     flex-wrap: wrap;
 }
 
+/* Individual Service Card */
 .service-card {
-    background: rgba(13, 66, 51, 0.45);
+    background: linear-gradient(135deg, #008080, #003366); /* Gradient background */
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 300px;
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 100%;
+    max-width: 35%; /* Maximum width for responsiveness */
+    min-height: 300px; /* Increased minimum height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space between content and button */
     text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
 }
 
+.service-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Service Card Heading */
 .service-card h3 {
-    font-size: 1.5em;
+    font-size: 1.75rem; /* Larger font size for headings */
+    font-weight: 500;
     margin-bottom: 15px;
-    color: #F5EFE6;
+    color: #E8DFCA; /* Cream color for headings */
 }
 
+/* Service Card Text */
 .service-card p {
-    font-size: 1em;
+    font-size: 1rem; /* Adjusted font size for better readability */
     margin-bottom: 20px;
-    color: #F5EFE6;
+    color: #E8DFCA; /* Cream color for paragraph text */
 }
 
+/* Button Style */
 .service-card .btn {
     padding: 10px 20px;
-    color: #1A4D2E;
-    background-color: #F5EFE6;
+    color: #E8DFCA; /* Cream color for button text */
+    background-color: #1A4D2E; /* Dark background to match the service section */
     text-decoration: none;
     border-radius: 5px;
     transition: 0.3s;
-    border: 2px solid #1A4D2E;
+    border: 2px solid #E8DFCA; /* Border color to match button text */
 }
 
 .service-card .btn:hover {
@@ -568,10 +600,11 @@ section {
 }
 
 
+
 /* Gallery */
 
 .gallery{
-    background-image: url('photos/contact.jpeg');
+    background-image: url('photos/background1.jpeg');
     color: #E8DFCA;
     /* Cream color for contrast */
     font-family: 'Poppins', sans-serif;
@@ -676,6 +709,12 @@ section {
         margin: 10px;
         width: 5px;
 
+    }
+
+    .service-card {
+        max-width: 250px; /* Maximum width for responsiveness */
+        min-height: 100px; /* Increased minimum height */
+     /* Smooth transitions */
     }
 
     .home .content {
