@@ -222,6 +222,13 @@ div.scroll-container img {
         /* Light hover effect for visual feedback */
     }
 
+    .home .content p {
+        font-size: 0.9em;
+        /* Smaller paragraph font size */
+        margin-bottom: 40px;
+        /* Adjust bottom margin of paragraph */
+    }
+
     .menu-btn {
         display: inline-block;
         font-size: 30px;
@@ -265,4 +272,5 @@ div.scroll-container img {
     .contact-flex {
         flex-direction: column;
     }
+
 }
