@@ -415,7 +415,12 @@ section {
     /* Maximum width of the content */
     margin-top: 30px;
     /* Space from header */
+    padding: 0 20px;
+    /* Horizontal padding for container */
+    box-sizing: border-box;
+    /* Include padding in element's total width and height */
 }
+
 
 .section-title {
     text-align: center;
