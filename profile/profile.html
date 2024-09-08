@@ -27,10 +27,8 @@
     <div class="content">
         <div class="card-container">
             <div class="profile-card">
-
                 <img src="/photos/profile.jpeg" alt="Vernon Fernando">
             </div>
-
             <div class="profile-card">
                 <div class="profile-text">
                     <p>
@@ -44,11 +42,10 @@
                         Deutschen Reiseagenturen als Freelancer und Reiseleiter gearbeitet. Außerdem habe ich über 6
                         Monate lang einen Kochkurs absolviert mit Schwerpunkt Reis und Curry und habe außerhalb der
                         Reisesaison immer wieder, und verstärkt während der Corona-Pandemie, in verschiedenen
-                        Restautants in der Gastronomie als Koch gearbeitet. </p>
+                        Restautants in der Gastronomie als Koch gearbeitet.
+                    </p>
                 </div>
             </div>
-            
-
             <div class="profile-card">
                 <div class="profile-text">
                     <p>
@@ -63,14 +60,74 @@
                         gutes und professionelles Team, mit jahrelangen Erfahrungen als Fahrer und Reiseleiter. Ich
                         organisiere bequeme Fahrzeuge für alle angebotenen Reisen, die neuwertig und klimatisiert sind.
                         Bei der Buchung der Hotels oder sonstigen Unterkünfte unterstützen wir Sie gerne, alternativ
-                        können Sie diese auch selbst buchen. </p>
+                        können Sie diese auch selbst buchen.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 
-
     <script src="../profile/profile.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuBtn = document.querySelector('.menu-btn');
+            const navigation = document.querySelector('.navigation');
+            const btns = document.querySelectorAll('.nav-btn');
+            const slides = document.querySelectorAll('.photo-slide');
+            let currentIndex = 0; // Current slide index
+            const intervalTime = 5000; // Time between automatic transitions in milliseconds
+
+            function slideNav(manual) {
+                if (manual !== undefined) {
+                    currentIndex = manual; // Update current index if manual change
+                }
+                slides.forEach((slide, index) => {
+                    slide.style.opacity = '0'; // Hide all images
+                    slide.style.visibility = 'hidden'; // Make them not visible
+                    if (index === currentIndex) {
+                        slide.style.opacity = '1'; // Show the selected image
+                        slide.style.visibility = 'visible'; // Make it visible
+                    }
+                });
+
+                btns.forEach((btn, index) => {
+                    btn.classList.remove('active');
+                    if (index === currentIndex) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+
+            function autoSlide() {
+                currentIndex = (currentIndex + 1) % slides.length; // Increment index or reset
+                slideNav(); // Call slideNav with new index
+            }
+
+            // Initialize the first slide and button as active on page load
+            slideNav(currentIndex);
+            setInterval(autoSlide, intervalTime); // Set up the interval for auto sliding
+
+            // Add click event listeners to each navigation button
+            btns.forEach((btn, i) => {
+                btn.addEventListener('click', () => {
+                    slideNav(i);
+                    currentIndex = i; // Update current index on manual click
+                });
+            });
+
+            menuBtn.addEventListener('click', () => {
+                navigation.classList.toggle('active');
+            });
+
+            // Close navigation drawer when clicking outside of it
+            document.addEventListener('click', (event) => {
+                if (!navigation.contains(event.target) && !menuBtn.contains(event.target)) {
+                    navigation.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

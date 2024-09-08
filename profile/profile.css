@@ -16,13 +16,12 @@ body {
 /* Menu Button */
 .menu-btn {
     display: none;
-    font-size: 24px;
+    font-size: 20px;
     cursor: pointer;
+    right: 10px;
+    top: 10px;
     position: fixed;
-    right: 20px;
-    top: 20px;
     z-index: 1050;
-    color: #0099ff;
 }
 
 /* Fonts Import */
@@ -38,9 +37,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
+    padding: 15px 200px;
     transition: 0.5s ease;
-    background-color: rgba(26, 77, 46, 0.9);
+    background-color: rgba(26, 77, 46, 0.6);
 }
 
 header .brand {
@@ -54,6 +53,39 @@ header .brand {
 header .navigation .navigation-items {
     display: flex;
     align-items: center;
+}
+
+.slider-navigation {
+    z-index: 888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(80px);
+    margin-bottom: 12px;
+}
+
+.slider-navigation .nav-btn {
+    width: 12px;
+    height: 12px;
+    background: #E8DFCA;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: #4F6F52;
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+
+.slider-navigation .nav-btn.active {
+    background: #4F6F52;
+}
+
+.slider-navigation .nav-btn {
+    margin: 20px;
+}
+
+.slider-navigation .nav-btn:hover {
+    transform: scale(1.2);
 }
 
 header .navigation .navigation-items a {
@@ -99,9 +131,6 @@ header .navigation .navigation-items a:hover::before {
     flex-wrap: wrap;
     gap: 20px;
     align-items: center;
-     /* Space between cards */
-
-
 }
 
 /* Profile Card Styles */
@@ -111,18 +140,17 @@ header .navigation .navigation-items a:hover::before {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     padding: 20px;
     flex: 1 1 25%;
-     /* Two cards per row, each taking 50% of the width */
-    max-width: fit-content; /* Ensures the card doesn't exceed 50% of the container's width */
+    max-width: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    height: auto; /* Allows height to adjust based on content */
+    height: auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-card:hover {
-    transform: translateY(-10px); /* Lift effect on hover */
+    transform: translateY(-10px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -144,20 +172,53 @@ header .navigation .navigation-items a:hover::before {
 
 /* Responsive Styles */
 @media (max-width: 992px) {
+    .content {
+        padding: 80px 20px;
+    }
+
     .profile-card {
-        flex: 1 1 100%; /* Stack cards on smaller screens */
+        flex: 1 1 48%; /* Two cards per row */
         max-width: 100%;
+    }
+
+    .card-container {
+        flex-direction: row;
     }
 }
 
 @media (max-width: 768px) {
+    header {
+        padding: 15px 50px;
+        position: fixed;
+        /* Reduced padding for smaller screens */
+        background-color: #1A4D2E;
+    }
+
+    header .brand {
+        font-size: 1.1em;
+        /* Reduce font size for brand */
+    }
+
+    .content {
+        padding: 60px 10px;
+    }
+    .card-container {
+        flex-direction: row;
+    }
+
+    .profile-card {
+        flex: 1 1 100%; /* Stack cards vertically */
+        max-width: 100%;
+    }
+
+    /* Menu Button */
     .menu-btn {
         display: block;
     }
 
     header .navigation .navigation-items {
         display: none;
-        flex-direction: column;
+        flex-direction: row;
         background: #1a1a1a;
         position: absolute;
         top: 60px;
@@ -174,5 +235,28 @@ header .navigation .navigation-items a:hover::before {
     header .navigation .navigation-items a {
         color: #f5f6f7;
         margin: 15px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        padding: 15px 50px;
+        position: fixed;
+        /* Reduced padding for smaller screens */
+        background-color: #1A4D2E;
+    }
+
+    header .brand {
+        font-size: 1.1em;
+        /* Reduce font size for brand */
+    }
+
+    .profile-card img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-card .profile-text {
+        font-size: 1em;
     }
 }
